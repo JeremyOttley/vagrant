@@ -1,0 +1,4 @@
+---
+- hosts: bionic64
+  become: true
+  tasks:
