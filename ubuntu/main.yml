@@ -2,3 +2,13 @@
 - hosts: bionic64
   become: true
   tasks:
+  - name: Set default target to graphical
+    shell: systemctl set-default graphical
+  - name: Install dev environment
+    apt:
+      name: "{{item}}"
+      state: present
+    with_items:
+      - clojure
+      - leiningen
+      - emacs
